@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>My GitHub Projects</h1>
+        <button id="themeToggle" class="theme-toggle">
+            <i class="fas fa-sun"></i>
+        </button>
+    </header>
+    
+    <div class="add-project-container">
+        <h2>Add New Project</h2>
+        <form id="addProjectForm" class="add-project-form">
+            <input type="text" id="projectName" placeholder="Project Name" required>
+            <input type="text" id="projectDescription" placeholder="Project Description" required>
+            <input type="text" id="pageLink" placeholder="Live Demo URL">
+            <div class="button-group">
+                <button type="submit">Add Project</button>
+                <button type="button" id="demoFill">Demo Fill</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="projects-container" id="projects">
+        <!-- Sample Project Card -->
+        <div class="project-card">
+            <h3 class="project-name">Project Title</h3>
+            <p class="project-description">Project Description goes here</p>
+            <div class="project-links">
+                <a href="#" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="#" class="page-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

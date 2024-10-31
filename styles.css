@@ -1,0 +1,737 @@
+/* ... existing styles ... */
+
+/* Add these new styles */
+.add-project-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.add-project-container h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.add-project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-project-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 2px solid var(--input-border);
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.add-project-form input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.add-project-form input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+.add-project-form button {
+    padding: 12px;
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-project-form button:hover {
+    background-color: #0256b9;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card:hover .project-icon {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
+
+.project-name {
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.project-description {
+    color: #666;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #0366d6;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #f6f8fa;
+}
+
+.project-links a:hover {
+    background-color: #e1e4e8;
+}
+
+.project-links i {
+    font-size: 18px;
+}
+
+/* Update project-card styles */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.github-link {
+    background-color: #24292e;
+    color: white !important;
+}
+
+.page-link {
+    background-color: #28a745;
+    color: white !important;
+}
+
+.project-link:hover {
+    opacity: 0.9;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #0366d6;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0256b9;
+}
+
+#demoFill {
+    background-color: #28a745;
+    color: white;
+}
+
+#demoFill:hover {
+    background-color: #218838;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.project-icon {
+    font-size: 24px;
+    color: #0366d6;
+    background: #f6f8fa;
+    padding: 10px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Theme Variables */
+:root {
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --shadow: rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --shadow: rgba(0,0,0,0.3);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Updated Body Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Updated Card Styles */
+.project-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Updated Link Styles */
+.project-links a {
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 2px solid;
+}
+
+.github-link {
+    border-color: #2ea44f !important;
+    color: #2ea44f !important;
+}
+
+.github-link:hover {
+    background-color: #2ea44f !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.page-link {
+    border-color: #0366d6 !important;
+    color: #0366d6 !important;
+}
+
+.page-link:hover {
+    background-color: #0366d6 !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Add these to your existing styles */
+header {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Theme Variables with Enhanced Colors */
+:root {
+    --bg-gradient: linear-gradient(120deg, #e0e8ff 0%, #ffffff 100%);
+    --card-bg: #ffffff;
+    --text-color: #2d3436;
+    --text-secondary: #636e72;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --input-bg: #ffffff;
+    --input-border: #e1e8ed;
+}
+
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(120deg, #2d3436 0%, #1a1a1a 100%);
+    --card-bg: #2d3436;
+    --text-color: #f5f6fa;
+    --text-secondary: #dcdde1;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    transition: all 0.5s ease;
+    min-height: 100vh;
+}
+
+/* Animated Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 2px solid currentColor;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* Enhanced Card Styles */
+.project-card {
+    background: var(--card-gradient);
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px var(--shadow);
+}
+
+.project-name {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Enhanced Button Styles */
+.project-links a {
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    z-index: 1;
+}
+
+.github-link {
+    background: var(--button-github);
+    color: white !important;
+}
+
+.page-link {
+    background: var(--button-demo);
+    color: white !important;
+}
+
+.project-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: white !important;
+}
+
+.project-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.project-links a:hover::before {
+    left: 100%;
+}
+
+/* Card Header with Icon */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.project-icon {
+    font-size: 24px;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Add these new animations */
+.project-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styles */
+header h1 {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form Styles Enhancement */
+.add-project-form input {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.add-project-form input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 10px rgba(79,172,254,0.3);
+}
+
+.button-group button {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79,172,254,0.3);
+}
+
+#demoFill {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: white;
+}
+
+#demoFill {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.button-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79,172,254,0.3);
+}
+
+/* Dark Theme Specific Adjustments */
+[data-theme="dark"] .add-project-container {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .add-project-form input {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-color);
+    border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .add-project-form input:focus {
+    border-color: #4facfe;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Animation for the Add Project Container */
+.add-project-container {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for the container */
+.add-project-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* Add Project Container Styles */
+.add-project-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.add-project-container h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Form Input Styles */
+.add-project-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 2px solid var(--input-border);
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.add-project-form input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.add-project-form input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+#demoFill {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: white;
+}
+
+.button-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+/* Project Card Styles */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+/* Project Links */
+.project-links a {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.github-link {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white !important;
+}
+
+.page-link {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white !important;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* Theme Toggle Enhancement */
+.theme-toggle {
+    position: fixed;  /* Changed to fixed */
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--shadow);
+    padding: 12px;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+/* Projects Container */
+.projects-container {
+    padding: 20px;
+    gap: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-project-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+    }
+}
