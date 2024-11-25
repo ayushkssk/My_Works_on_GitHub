@@ -1,29 +1,20 @@
 /* ... existing styles ... */
 
-/* Add these new styles */
-.add-project-container {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    padding: 25px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px var(--shadow);
+/* Theme styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
     transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
 }
 
-.add-project-container h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    text-align: center;
-    font-weight: 600;
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
-.add-project-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.dark-theme .project-card {
+    background-color: #2d2d2d;
+    border-color: #404040;
 }
 
 .add-project-form input {
