@@ -67,6 +67,7 @@ body.dark-theme {
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
 }
 
 .project-card:hover {
@@ -725,4 +726,37 @@ header h1 {
         top: 10px;
         right: 10px;
     }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+    color: #ff0000;
+}
+
+.dark-theme .delete-btn {
+    color: #ff6666;
+}
+
+.dark-theme .delete-btn:hover {
+    color: #ff4444;
 }
